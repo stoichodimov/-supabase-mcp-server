@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+
+  <body>
+    <div class="card">
+      <!-- LOGIN SECTION -->
+      <div id="loginSection">
+        <h2>Notes App — Login</h2>
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Sign in with Email</button>
+        <button class="btn-purple" onclick="register()">
+          Register with Email
+        </button>
+        <p class="error" id="authError"></p>
+        <div class="divider">or sign in with</div>
+        <button class="btn-github" onclick="loginWithGitHub()">
+          Sign in with GitHub
+        </button>
+      </div>
+
+      <!-- APP SECTION -->
+      <div id="appSection" style="display: none">
+        <h2>Hi, <span id="userEmail"></span></h2>
+        <p class="meta">Signed in with: <strong id="userProvider"></strong></p>
+
+        <!-- CREATE NOTE SECTION -->
+        <div class="section">
+          <h3>Create New Note</h3>
+          <input type="text" id="noteTitle" placeholder="Note title" />
+          <textarea id="noteContent" placeholder="Note content (optional)"></textarea>
+          <button onclick="createNote()">Create Note</button>
+          <p class="error" id="noteError"></p>
+          <p class="success" id="noteSuccess" style="display: none">Note created successfully!</p>
+        </div>
+
+        <!-- NOTES LIST SECTION -->
+        <div class="section">
+          <h3>Your Notes</h3>
+          <button class="btn-purple" onclick="listNotes()" style="margin-bottom: 1rem;">Refresh Notes</button>
+          <div id="notesList" class="loading">Loading notes...</div>
+        </div>
+
+        <!-- JWT TOKEN SECTION -->
+        <div class="section">
+          <h3>JWT token (for Postman)</h3>
+          <div class="token-box" id="jwtToken"></div>
+          <button class="btn-purple" onclick="copyToken()">Copy token</button>
+          <p class="success" id="copyMsg" style="display: none">Copied!</p>
+        </div>
+
+        <button class="btn-red" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

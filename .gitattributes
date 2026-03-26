@@ -1,0 +1,37 @@
+# Git configuration for consistent line endings across platforms
+* text=auto
+
+# JavaScript files
+*.js text
+*.json text eol=lf
+
+# Markdown files
+*.md text
+*.md.bak text
+
+# Auto detect with detection algorithm
+# Handle line endings automatically for all files
+* text=auto
+
+# Explicitly define files which should keep Unix line endings
+*.sh text eol=lf
+.env.example text eol=lf
+
+# Explicitly define files which should keep Windows line endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Denote all files that are truly binary and should not be modified
+*.jpg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.otf binary
+*.db binary

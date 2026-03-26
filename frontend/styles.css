@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+h3 {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #3ecf8e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-purple {
+  background: #6366f1;
+  margin-top: 0.5rem;
+}
+
+.btn-red {
+  background: #e53e3e;
+  margin-top: 0.5rem;
+}
+
+.btn-github {
+  background: #24292e;
+  margin-top: 0.5rem;
+}
+
+.btn-google {
+  background: #4285f4;
+  margin-top: 0.5rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: #999;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.token-box {
+  background: #f0fdf4;
+  border: 1px solid #3ecf8e;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  word-break: break-all;
+  font-size: 0.72rem;
+  color: #333;
+  max-height: 80px;
+  overflow: auto;
+}
+
+.error {
+  color: #e53e3e;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #3ecf8e;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.meta {
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.note-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.note-item h4 {
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  word-wrap: break-word;
+}
+
+.note-item p {
+  color: #666;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.note-item .meta {
+  font-size: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.note-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.btn-small {
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  color: #999;
+  padding: 1rem;
+}

@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "Supabase Notes MCP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000" },
+    { "key": "jwt_token", "value": "PASTE_JWT_TOKEN_HERE" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "List Notes",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/mcp",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json, text/event-stream" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"list_notes\",\n    \"arguments\": {}\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Note",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/mcp",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json, text/event-stream" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 2,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"create_note\",\n    \"arguments\": {\n      \"title\": \"My First Note\",\n      \"content\": \"Content of the note\"\n    }\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Note",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/mcp",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json, text/event-stream" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 3,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"update_note\",\n    \"arguments\": {\n      \"id\": \"PASTE_UUID_HERE\",\n      \"title\": \"Updated Title\",\n      \"content\": \"Updated Content\"\n    }\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Note",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/mcp",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json, text/event-stream" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 4,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"delete_note\",\n    \"arguments\": {\n      \"id\": \"PASTE_UUID_HERE\"\n    }\n  }\n}"
+        }
+      }
+    }
+  ]
+}
